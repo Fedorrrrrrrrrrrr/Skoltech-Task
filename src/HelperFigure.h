@@ -6,12 +6,15 @@
 #define TASKSKOLTECH_HELPERFIGURE_H
 
 #include <typeinfo>
-
 class HelperFigure
 {
 public:
     template<typename T>
-    static bool isNumericVariable(T variable);
+    static bool isNumericVariable(T variable){
+        return (typeid(variable) == typeid(int) || typeid(variable) == typeid(float)
+                || typeid(variable) == typeid(double));
+    }
 };
+
 
 #endif //TASKSKOLTECH_HELPERFIGURE_H
