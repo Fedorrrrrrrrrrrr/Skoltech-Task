@@ -15,29 +15,20 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    name: "buildTest"
-    config:
-    - {
-            name: "Windows Latest MinGW",
-            os: windows-latest,
-            build_type: "Release",
-            cc: "gcc",
-            cxx: "g++",
-            generators: "Ninja"
-          }
-#     runs-on: ${{ matrix.config.os }} # будет запускаться по очереди на всех типах машин
-#     strategy:
-#       fail-fast: false
+    
+    runs-on: ${{ matrix.config.os }} # будет запускаться по очереди на всех типах машин
+    strategy:
+      fail-fast: false
 #       matrix:
-#         config:     
-#         - {
-#             name: "Windows Latest MinGW",
-#             os: windows-latest,
-#             build_type: "Release",
-#             cc: "gcc",
-#             cxx: "g++",
-#             generators: "Ninja"
-#           }       
+    config:     
+    - {
+        name: "Windows Latest MinGW",
+        os: windows-latest,
+        build_type: "Release",
+        cc: "gcc",
+        cxx: "g++",
+        generators: "Ninja"
+      }       
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
