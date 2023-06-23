@@ -1,6 +1,5 @@
 # This is a basic workflow to help you get started with Actions
 # workflow - цепочка действий
-# Имя процесса Билдится на всех типах 📦 🐍
 name: CMake Build 
 
 # Controls when the action will run. Triggers the workflow on push
@@ -16,20 +15,29 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    name: ${{ matrix.config.name }}
-    runs-on: ${{ matrix.config.os }} # будет запускаться по очереди на всех типах машин
-    strategy:
-      fail-fast: false
-      matrix:
-        config:     
-        - {
+    name: "buildTest"
+    config:
+    - {
             name: "Windows Latest MinGW",
             os: windows-latest,
             build_type: "Release",
             cc: "gcc",
             cxx: "g++",
             generators: "Ninja"
-          }       
+          }
+#     runs-on: ${{ matrix.config.os }} # будет запускаться по очереди на всех типах машин
+#     strategy:
+#       fail-fast: false
+#       matrix:
+#         config:     
+#         - {
+#             name: "Windows Latest MinGW",
+#             os: windows-latest,
+#             build_type: "Release",
+#             cc: "gcc",
+#             cxx: "g++",
+#             generators: "Ninja"
+#           }       
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
