@@ -19,16 +19,16 @@ jobs:
     runs-on: ${{ matrix.config.os }} # будет запускаться по очереди на всех типах машин
     strategy:
       fail-fast: false
-#       matrix:
-    config:     
-    - {
-        name: "Windows Latest MinGW",
-        os: windows-latest,
-        build_type: "Release",
-        cc: "gcc",
-        cxx: "g++",
-        generators: "Ninja"
-      }       
+      matrix:      
+        config:     
+        - {
+            name: "Windows Latest MinGW",
+            os: windows-latest,
+            build_type: "Release",
+            cc: "gcc",
+            cxx: "g++",
+            generators: "Ninja"
+          }       
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
