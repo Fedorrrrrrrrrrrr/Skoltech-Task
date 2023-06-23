@@ -3,41 +3,4 @@
 //
 
 #include "Circle.h"
-#include <iostream>
 
-//template<typename T>
-//Circle<T>::Circle(T radius)
-//{
-//    setRadius(radius);
-//}
-
-//template<typename T>
-//double Circle<T>::getPerimeter() const
-//{
-//    return m_perimeter;
-//}
-//
-//template<typename T>
-//void Circle<T>::setRadius(T radius)
-//{
-//    std::cout <<1;
-//    m_radius = radius;
-//    std::cout <<2;
-//    setPerimeter();
-//    std::cout <<3;
-//    if (HelperFigure::isNumericVariable(radius))
-//    {
-//        m_radius = radius;
-//        setPerimeter();
-//    }
-//    else
-//    {
-//        m_radius = 0;
-//    }
-//}
-//
-//template<typename T>
-//void Circle<T>::setPerimeter()
-//{
-//    m_perimeter = 2 * 3.14 * m_radius;
-//}

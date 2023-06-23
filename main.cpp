@@ -5,6 +5,6 @@
 int main()
 {
     Circle circle {5};
-    std::cout << circle.getPerimeter();
+    std::cout <<"solution: " << circle.getPerimeter();
     return 0;
 }
