@@ -1,7 +1,7 @@
 # This is a basic workflow to help you get started with Actions
 # workflow - цепочка действий
 # Имя процесса Билдится на всех типах 📦 🐍
-name: CMake Build Matrix
+name: CMake Build 
 
 # Controls when the action will run. Triggers the workflow on push
 on: 
@@ -25,11 +25,9 @@ jobs:
         - {
             name: "Windows Latest MinGW",
             os: windows-latest,
-#             artifact: "windows_mingw.7z",
             build_type: "Release",
             cc: "gcc",
             cxx: "g++",
-#             archiver: "7z a",
             generators: "Ninja"
           }       
 
@@ -68,25 +66,3 @@ jobs:
         shell: bash
         run: cmake --install . --strip
 
-#       - name: Pack
-#         shell: bash
-#         working-directory: instdir
-#         run: |
-#           ls -laR
-#           ${{ matrix.config.archiver }} ../${{ matrix.config.artifact }} .
-#       - name: Upload
-#         uses: actions/upload-artifact@v1
-#         with:
-#           path: ./${{ matrix.config.artifact }}
-#           name: ${{ matrix.config.artifact }}
-
-#       - name: Upload release asset
-#         if: github.event_name == 'release' && (github.event.action == 'published' || github.event.action == 'created')
-#         uses: actions/upload-release-asset@v1
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#         with:
-#           upload_url: ${{ github.event.release.upload_url }}
-#           asset_path: ./${{ matrix.config.artifact }}
-#           asset_name: ${{ matrix.config.artifact }}.zip
-#           asset_content_type: application/zip
